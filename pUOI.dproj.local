@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/09/09 13:17:05.000.379,=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:44:06.000.401,=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:44:17.000.988,=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:44:30.000.657,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uUOI.fmx=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2017/09/09 22:44:30.000.657,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uUOI.pas=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:44:33.000.739,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\pUOI.dproj=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/09/09 22:44:59.000.536,=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:45:23.000.230,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uDataModule.dfm=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.dfm</Transaction>
+    <Transaction>2017/09/09 22:45:23.000.230,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uDataModule.pas=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="AVD_for_Nexus_5_by_Google"/>
+	</ActiveMobileDevice>
+</BorlandProject>
