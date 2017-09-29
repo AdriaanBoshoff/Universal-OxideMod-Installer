@@ -51,7 +51,7 @@ object frmmain: Tfrmmain
         'Planet Explorers'
         'Reign Of Kings'
         'Savage Lands'
-        'Seven Days'
+        '7 Days to Die'
         'Space Engineers'
         'Terraria')
       Position.X = 18.000000000000000000

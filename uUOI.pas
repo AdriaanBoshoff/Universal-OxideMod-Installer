@@ -69,6 +69,7 @@ constructor TDownload.Create(CreateSuspended: boolean; aurl, afilename: string);
 begin
   inherited Create(CreateSuspended);
   httpclient := TIdHTTP.Create(nil);
+  httpclient.Request.UserAgent := 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1';
   httpclient.IOHandler := TIdSSLIOHandlerSocketOpenSSL.Create(httpclient);
   httpclient.HandleRedirects := True;
   httpclient.OnWorkBegin := idhttp1WorkBegin;
@@ -160,25 +161,25 @@ begin
     end;
 
   case cbbgames.ItemIndex of
-    0 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Rust.zip';
-    1 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-RustLegacy.zip';
-    2 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Unturned.zip';
-    3 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-TheForest.zip';
-    4 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Hurtworld.zip';
-    5 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Blackwake.zip';
-    6 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Blockstorm.zip';
-    7 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-FortressCraft.zip';
-    8 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-FromTheDepths.zip';
-    9 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-GangBeasts.zip';
-    10 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-InterstellarRift.zip';
-    11 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-MedievalEngineers.zip';
-    12 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Nomad.zip';
-    13 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-PlanetExplorers.zip';
-    14 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-ReignOfKings.zip';
-    15 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-SavageLands.zip';
-    16 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-SevenDays.zip';
-    17 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-SpaceEngineers.zip';
-    18 : link := 'https://bintray.com/oxidemod/builds/download_file?file_path=Oxide-Terraria.zip';
+    0 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Rust.zip';
+    1 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-RustLegacy.zip';
+    2 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Unturned.zip';
+    3 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-TheForest.zip';
+    4 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Hurtworld.zip';
+    5 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blackwake.zip';
+    6 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blockstorm.zip';
+    7 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FortressCraft.zip';
+    8 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FromTheDepths.zip';
+    9 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-GangBeasts.zip';
+    10 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-InterstellarRift.zip';
+    11 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-MedievalEngineers.zip';
+    12 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Nomad.zip';
+    13 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-PlanetExplorers.zip';
+    14 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-ReignOfKings.zip';
+    15 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SavageLands.zip';
+    16 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SevenDays.zip';
+    17 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SpaceEngineers.zip';
+    18 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Terraria.zip';
   end;
 
   pb1.Value := 0;
