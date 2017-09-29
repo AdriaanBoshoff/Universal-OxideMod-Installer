@@ -113,7 +113,7 @@ object frmmain: Tfrmmain
     Size.Width = 33.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'v1.0'
+    Text = 'v1.1'
     TabOrder = 7
   end
 end
