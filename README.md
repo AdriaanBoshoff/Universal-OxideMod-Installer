@@ -7,8 +7,7 @@ Just extract in your server root dir, Launch, Select a server and then click ins
 ## Links:
 <ul>
   <li><a href="http://oxidemod.org/">OxideMod</a></li>
-  <li><a href="https://inforcer25.co.za/">Official Website</a></li>
-  <li><a href="https://github.com/Inforcer25/Universal-OxideMod-Installer/releases">Download</a></li>
+  <li><a href="https://github.com/AdriaanBoshoff/Universal-OxideMod-Installer/releases">Download</a></li>
 </ul>
 
 ## For Developers:
