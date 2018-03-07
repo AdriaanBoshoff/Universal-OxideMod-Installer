@@ -7,7 +7,7 @@ uses
 
 type
   TdmData = class(TDataModule)
-    stylbkcopperdark: TStyleBook;
+    stylebookBlackPearl: TStyleBook;
   private
     { Private declarations }
   public

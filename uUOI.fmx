@@ -104,7 +104,7 @@ object frmmain: Tfrmmain
   end
   object lbl2: TLabel
     Position.Y = 304.000000000000000000
-    Text = 'Made by Inforcer25'
+    Text = 'Made by Quantum'
     TabOrder = 6
   end
   object lbl3: TLabel
@@ -113,7 +113,7 @@ object frmmain: Tfrmmain
     Size.Width = 33.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'v1.1'
+    Text = 'v1.2'
     TabOrder = 7
   end
 end

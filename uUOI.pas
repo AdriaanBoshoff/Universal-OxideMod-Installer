@@ -38,6 +38,7 @@ type
   TDownload = class(TThread)
   private
     httpclient: TIdHTTP;
+    SocketOpenSSL: TIdSSLIOHandlerSocketOpenSSL;
     url: string;
     filename: string;
     maxprogressbar: integer;
@@ -69,8 +70,10 @@ constructor TDownload.Create(CreateSuspended: boolean; aurl, afilename: string);
 begin
   inherited Create(CreateSuspended);
   httpclient := TIdHTTP.Create(nil);
-  httpclient.Request.UserAgent := 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1';
-  httpclient.IOHandler := TIdSSLIOHandlerSocketOpenSSL.Create(httpclient);
+  SocketOpenSSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+  SocketOpenSSL.SSLOptions.SSLVersions := [ sslvSSLv23 ];
+  httpclient.Request.UserAgent := 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36';
+  httpclient.IOHandler := SocketOpenSSL;
   httpclient.HandleRedirects := True;
   httpclient.OnWorkBegin := idhttp1WorkBegin;
   httpclient.OnWork := idhttp1Work;

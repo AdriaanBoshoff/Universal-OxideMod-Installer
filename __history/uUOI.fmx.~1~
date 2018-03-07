@@ -1,0 +1,119 @@
+object frmmain: Tfrmmain
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = Single
+  Caption = 'Universal OxideMod Installer'
+  ClientHeight = 335
+  ClientWidth = 330
+  StyleBook = dmData.stylbkcopperdark
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lbl1: TLabel
+    Align = Top
+    StyledSettings = [Family, Style, FontColor]
+    Size.Width = 330.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    TextSettings.HorzAlign = Center
+    Text = 'Installs the latest version of OxideMod for your selected server'
+    TabOrder = 0
+  end
+  object grpgameselection: TGroupBox
+    StyledSettings = [Family, Style, FontColor, Other]
+    Position.X = 38.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 254.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Game Server Selection:'
+    TextSettings.Font.Size = 18.000000000000000000
+    TabOrder = 1
+    object cbbgames: TComboBox
+      Items.Strings = (
+        'Rust'
+        'Rust Legacy'
+        'Unturned'
+        'The Forest'
+        'Hurt World'
+        'Black Wake'
+        'Block Storm'
+        'Fortress Craft'
+        'From The Depths'
+        'Gang Beasts'
+        'Interstellar Rift'
+        'Medieval Engineers'
+        'Nomad'
+        'Planet Explorers'
+        'Reign Of Kings'
+        'Savage Lands'
+        '7 Days to Die'
+        'Space Engineers'
+        'Terraria')
+      Position.X = 18.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = cbbgamesChange
+    end
+  end
+  object pb1: TProgressBar
+    Orientation = Horizontal
+    Position.X = 40.000000000000000000
+    Position.Y = 200.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 6.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'progressbarstyle'
+  end
+  object btninstall: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 40.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 63.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Install / Update'
+    TextSettings.Font.Size = 22.000000000000000000
+    OnClick = btninstallClick
+  end
+  object lblprogress: TLabel
+    Position.X = 40.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '0 / 0'
+    TabOrder = 4
+  end
+  object lblstatus: TLabel
+    Position.X = 40.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 257.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Status'
+    TabOrder = 5
+  end
+  object lbl2: TLabel
+    Position.Y = 304.000000000000000000
+    Text = 'Made by Inforcer25'
+    TabOrder = 6
+  end
+  object lbl3: TLabel
+    Position.X = 296.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'v1.1'
+    TabOrder = 7
+  end
+end
