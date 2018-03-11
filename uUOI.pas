@@ -3,9 +3,11 @@ unit uUOI;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, uDataModule,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, IniFiles, IdBaseComponent, IdComponent,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, IniFiles,
+  IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, IdHTTP, System.Zip, IdSSLOpenSSL;
 
 type
@@ -27,10 +29,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure cbbgamesChange(Sender: TObject);
     procedure btninstallClick(Sender: TObject);
+    procedure ExtractResource(ResourceName, Path: string);
+
   private
     { Private declarations }
     ini_settings: string;
-    val, endval: Integer;
   public
     { Public declarations }
   end;
@@ -41,8 +44,8 @@ type
     SocketOpenSSL: TIdSSLIOHandlerSocketOpenSSL;
     url: string;
     filename: string;
-    maxprogressbar: integer;
-    progressbarstatus: integer;
+    maxprogressbar: Integer;
+    progressbarstatus: Integer;
     procedure ExtractZip(ZipFile: string; ExtractPath: string);
     procedure idhttp1Work(ASender: TObject; AWorkMode: TWorkMode;
       AWorkCount: Int64);
@@ -63,7 +66,6 @@ var
 implementation
 
 {$R *.fmx}
-
 { Thread }
 
 constructor TDownload.Create(CreateSuspended: boolean; aurl, afilename: string);
@@ -71,8 +73,9 @@ begin
   inherited Create(CreateSuspended);
   httpclient := TIdHTTP.Create(nil);
   SocketOpenSSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
-  SocketOpenSSL.SSLOptions.SSLVersions := [ sslvSSLv23 ];
-  httpclient.Request.UserAgent := 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36';
+  SocketOpenSSL.SSLOptions.SSLVersions := [sslvSSLv23];
+  httpclient.Request.UserAgent :=
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36';
   httpclient.IOHandler := SocketOpenSSL;
   httpclient.HandleRedirects := True;
   httpclient.OnWorkBegin := idhttp1WorkBegin;
@@ -114,7 +117,8 @@ end;
 procedure TDownload.UpdateProgressBar;
 begin
   frmmain.pb1.Value := progressbarstatus;
-  frmmain.lblprogress.Text := IntToStr(progressbarstatus) + ' / ' + IntToStr(maxprogressbar);
+  frmmain.lblprogress.Text := IntToStr(progressbarstatus) + ' / ' +
+    IntToStr(maxprogressbar);
   frmmain.lblstatus.Text := 'Downloading...';
 end;
 
@@ -158,39 +162,58 @@ var
   link: string;
 begin
   if cbbgames.ItemIndex = -1 then
-    begin
-      ShowMessage('You have to choose a game!');
-      Exit
-    end;
+  begin
+    ShowMessage('You have to choose a game!');
+    Exit
+  end;
 
   case cbbgames.ItemIndex of
-    0 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Rust.zip';
-    1 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-RustLegacy.zip';
-    2 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Unturned.zip';
-    3 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-TheForest.zip';
-    4 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Hurtworld.zip';
-    5 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blackwake.zip';
-    6 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blockstorm.zip';
-    7 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FortressCraft.zip';
-    8 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FromTheDepths.zip';
-    9 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-GangBeasts.zip';
-    10 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-InterstellarRift.zip';
-    11 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-MedievalEngineers.zip';
-    12 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Nomad.zip';
-    13 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-PlanetExplorers.zip';
-    14 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-ReignOfKings.zip';
-    15 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SavageLands.zip';
-    16 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SevenDays.zip';
-    17 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SpaceEngineers.zip';
-    18 : link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Terraria.zip';
+    0:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Rust.zip';
+    1:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-RustLegacy.zip';
+    2:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Unturned.zip';
+    3:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-TheForest.zip';
+    4:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Hurtworld.zip';
+    5:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blackwake.zip';
+    6:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Blockstorm.zip';
+    7:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FortressCraft.zip';
+    8:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-FromTheDepths.zip';
+    9:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-GangBeasts.zip';
+    10:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-InterstellarRift.zip';
+    11:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-MedievalEngineers.zip';
+    12:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Nomad.zip';
+    13:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-PlanetExplorers.zip';
+    14:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-ReignOfKings.zip';
+    15:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SavageLands.zip';
+    16:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SevenDays.zip';
+    17:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-SpaceEngineers.zip';
+    18:
+      link := 'https://www.github.com/OxideMod/Oxide/releases/download/latest/Oxide-Terraria.zip';
   end;
 
   pb1.Value := 0;
   btninstall.Enabled := False;
   cbbgames.Enabled := False;
   lblstatus.Text := 'Starting Download...';
-  DownloadThread := TDownload.Create(true, link, 'oxide.zip');
-  DownloadThread.FreeOnTerminate := true;
+  DownloadThread := TDownload.Create(True, link, 'oxide.zip');
+  DownloadThread.FreeOnTerminate := True;
   DownloadThread.Start;
 end;
 
@@ -199,18 +222,36 @@ begin
   SaveiniString('App Settings', 'last_game', cbbgames.ItemIndex.ToString);
 end;
 
+procedure Tfrmmain.ExtractResource(ResourceName, Path: string);
+var
+  ResStream: TResourceStream;
+begin
+  ResStream := TResourceStream.Create(HInstance, ResourceName, RT_RCDATA);
+  try
+    ResStream.Position := 0;
+    ResStream.SaveToFile(Path);
+  finally
+    ResStream.Free;
+  end;
+end;
+
 procedure Tfrmmain.FormCreate(Sender: TObject);
 begin
   Application.Title := 'Universal OxideMod Installer';
   ini_settings := '.\uoi-settings.ini';
-  cbbgames.ItemIndex := StrToInt(LoadiniString('App Settings', 'last_game', '0'));
+  cbbgames.ItemIndex := StrToInt(LoadiniString('App Settings',
+    'last_game', '0'));
 
-  if not FileExists('libeay32.dll') or not FileExists('ssleay32.dll') then
-  begin
+  {
+    if not FileExists('libeay32.dll') or not FileExists('ssleay32.dll') then
+    begin
     ShowMessage('Some files seem to be missing. Please re-download this software.');
     Application.Terminate;
-  end;
+    end;
+  }
 
+  ExtractResource('libeay32', GetCurrentDir + '\libeay32.dll');
+  ExtractResource('ssleay32', GetCurrentDir + '\ssleay32.dll');
 end;
 
 function Tfrmmain.LoadiniString(Section, Name, Value: string): string;

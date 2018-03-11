@@ -6,7 +6,7 @@ object frmmain: Tfrmmain
   Caption = 'Universal OxideMod Installer'
   ClientHeight = 335
   ClientWidth = 330
-  StyleBook = dmData.stylbkcopperdark
+  StyleBook = dmData.stylebookBlackPearl
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

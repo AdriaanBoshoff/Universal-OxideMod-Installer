@@ -8,8 +8,14 @@
     <Transaction>2017/09/09 22:44:30.000.657,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uUOI.pas</Transaction>
     <Transaction>2017/09/09 22:44:33.000.739,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\pUOI.dproj</Transaction>
     <Transaction>2017/09/09 22:44:59.000.536,=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.pas</Transaction>
-    <Transaction>2017/09/09 22:45:23.000.230,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.pas=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uDataModule.pas</Transaction>
     <Transaction>2017/09/09 22:45:23.000.230,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.dfm=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uDataModule.dfm</Transaction>
+    <Transaction>2017/09/09 22:45:23.000.230,C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\Unit1.pas=C:\Users\adria\Documents\Embarcadero\Studio\Projects\Universal OxideMod Installer\uDataModule.pas</Transaction>
+    <Transaction>2018/03/11 16:38:12.845,=C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\Win32\Release\libeay32.dll</Transaction>
+    <Transaction>2018/03/11 16:38:12.852,=C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\Win32\Release\ssleay32.dll</Transaction>
+    <Transaction>2018/03/11 16:43:14.676,=C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\BTMemoryModule.pas</Transaction>
+    <Transaction>2018/03/11 17:08:32.790,C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\BTMemoryModule.pas=</Transaction>
+    <Transaction>2018/03/11 17:09:28.832,=C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\resources\libeay32.dll</Transaction>
+    <Transaction>2018/03/11 17:09:28.858,=C:\Users\adria\Documents\GitHub\Universal-OxideMod-Installer\resources\ssleay32.dll</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5" Android=""/>
